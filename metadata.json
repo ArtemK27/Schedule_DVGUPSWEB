@@ -1,0 +1,6 @@
+{
+  "name": "ДВГУПС Расписание",
+  "description": "Быстрое расписание учебных групп ДВГУПС с мгновенным открытием, индикатором текущей пары и полным офлайн-доступом.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

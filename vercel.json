@@ -1,0 +1,49 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, Referer, x-dvgups-base, x-dvgups-endpoint"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/all_groups",
+      "destination": "/api/schedule?endpoint=/api/all_groups"
+    },
+    {
+      "source": "/api/teachers",
+      "destination": "/api/schedule?endpoint=/api/teachers"
+    },
+    {
+      "source": "/api/auditoriums",
+      "destination": "/api/schedule?endpoint=/api/auditoriums"
+    },
+    {
+      "source": "/api/schedule/teacher",
+      "destination": "/api/schedule?endpoint=/api/schedule/teacher"
+    },
+    {
+      "source": "/api/schedule/auditorium",
+      "destination": "/api/schedule?endpoint=/api/schedule/auditorium"
+    },
+    {
+      "source": "/api/health",
+      "destination": "/api/schedule?endpoint=/api/health"
+    },
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
