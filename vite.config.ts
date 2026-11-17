@@ -43,7 +43,7 @@ function dvgupsProxyPlugin(): Plugin {
 }
 
 export default defineConfig({
-  base: './',
+  base: '/Schedule_DVGUPSWEB/',
   plugins: [
     react(),
     tailwindcss(),
